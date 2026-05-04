@@ -13,7 +13,6 @@ public class Pet {
     private String raca;
 
     public Pet() {
-
     }
 
     public void setNomeCompleto(String nomeCompleto) {

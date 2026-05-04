@@ -22,7 +22,7 @@ public class Processador {
 
         Map<String, Consumer<String>> map = new HashMap<>();
 
-        map.put("1", r -> pet.setNomeCompleto(Validador.validarNome(r)));
+        map.put("1", r -> pet.setNomeCompleto(Validador.validarNomeCompleto(r)));
         map.put("2", r -> pet.setTipo(PetTipo.valueOf(r.toUpperCase())));
         map.put("3", r -> pet.setSexo(PetSexo.valueOf(r.toUpperCase())));
         map.put("4", pet::setEndereco);
