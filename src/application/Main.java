@@ -1,3 +1,7 @@
+package application;
+
+import components.Sistema;
+
 import java.util.Scanner;
 
 public class Main {

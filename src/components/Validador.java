@@ -1,6 +1,8 @@
+package components;
+
 public class Validador {
     public static boolean isEscolhaValida(String escolha) {
-        int escolhaInt = 0;
+        int escolhaInt;
         try {
             escolhaInt = Integer.parseInt(escolha);
         } catch (Exception e) {
