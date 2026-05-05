@@ -1,4 +1,4 @@
-package enums;
+package entities;
 
 public enum PetSexo {
     MACHO,

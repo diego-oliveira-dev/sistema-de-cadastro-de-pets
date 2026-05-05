@@ -1,18 +1,10 @@
 package application;
 
-import components.Sistema;
-
-import java.util.Scanner;
+import service.Sistema;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        Sistema.mostrarMenu();
-        String escolha = sc.nextLine();
-
-        Sistema.processarEscolha(escolha, sc);
-
-        sc.close();
+        Sistema sistema = new Sistema();
+        sistema.iniciar();
     }
 }

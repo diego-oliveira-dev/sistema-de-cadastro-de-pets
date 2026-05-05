@@ -1,11 +1,11 @@
-package components;
+package util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validador {
 
-    public static boolean isEscolhaValida(String escolha) {
+    public static boolean isInputValido(String escolha) {
         int escolhaInt;
         try {
             escolhaInt = Integer.parseInt(escolha);
@@ -22,7 +22,6 @@ public class Validador {
         String regex = "[^a-zA-ZÀ-ÿ\\s]";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(nome.trim());
-
         if (matcher.find()) {
             throw new IllegalArgumentException("Nome inválido!");
         }
@@ -35,7 +34,6 @@ public class Validador {
     public static String validarNomeCompleto(String nome) {
         String nomeValido = Validador.validarNome(nome);
         String[] campos = nomeValido.split(" ");
-
         if (campos.length <= 1) {
             throw new IllegalArgumentException("Nome inválido!");
         }
@@ -45,7 +43,7 @@ public class Validador {
     public static int validarIdade(String idadeString) {
         int idade;
         try {
-            idade = Integer.parseInt(idadeString.replace(",", "."));
+            idade = Integer.parseInt(idadeString);
         } catch (Exception e) {
             throw new IllegalArgumentException("Idade inválida!");
         }
@@ -60,10 +58,10 @@ public class Validador {
         try {
             peso = Double.parseDouble(pesoString.replace(",", "."));
         } catch (Exception e) {
-            throw new IllegalArgumentException("Peso inválida!");
+            throw new IllegalArgumentException("Peso inválido!");
         }
         if (peso > 60) {
-            throw new IllegalArgumentException("Peso inválida!");
+            throw new IllegalArgumentException("Peso inválido!");
         }
         return peso;
     }

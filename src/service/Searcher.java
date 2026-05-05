@@ -1,4 +1,4 @@
-package components.menu;
+package service;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,10 +19,10 @@ public class Searcher {
 //
 //        int escolha = sc.nextInt();
 //
-//        while (!Validador.isEscolhaValida(String.valueOf(escolha))) {
+//        while (!util.Validador.isEscolhaValida(String.valueOf(escolha))) {
 //            System.out.println();
 //            System.out.println("Escolha inválida! Tente novamente.");
-//            Sistema.mostrarMenu();
+//            service.Sistema.mostrarMenu();
 //            escolha = sc.nextInt();
 //        }
 

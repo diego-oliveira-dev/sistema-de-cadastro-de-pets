@@ -1,7 +1,4 @@
-package components;
-
-import enums.PetSexo;
-import enums.PetTipo;
+package entities;
 
 public class Pet {
     private String nomeCompleto;
