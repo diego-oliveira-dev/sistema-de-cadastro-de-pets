@@ -18,7 +18,6 @@ public class UI {
         System.out.println();
         System.out.println("FORMULÁRIO DE CADASTRO");
         System.out.println("Responda às perguntas abaixo:");
-        System.out.println();
     }
 
     public static void mostrarPergunta(String pergunta) {

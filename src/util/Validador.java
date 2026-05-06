@@ -1,5 +1,6 @@
 package util;
 
+import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,7 +20,8 @@ public class Validador {
     }
 
     public static String validarNome(String nome) {
-        String regex = "[^a-zA-ZÀ-ÿ\\s]";
+        // inserir hifen como elemento válido da string
+        String regex = "[^a-zA-ZÀ-ÿ\\s\\-]";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(nome.trim());
         if (matcher.find()) {
@@ -66,4 +68,10 @@ public class Validador {
         return peso;
     }
 
+    public static boolean isAlgumPetCadastrado(File[] arquivos) {
+        if (arquivos == null || arquivos.length == 0) {
+            return false;
+        }
+        return true;
+    }
 }

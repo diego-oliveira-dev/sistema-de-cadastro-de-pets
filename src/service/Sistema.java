@@ -19,6 +19,7 @@ public class Sistema {
                 break;
             case 2:
                 //service.Searcher.searchPets(sc);
+                Busca.listarPets();
                 System.out.println("Alterando dados de pet cadastrado...");
                 break;
             case 3:
@@ -26,9 +27,11 @@ public class Sistema {
                 break;
             case 4:
                 System.out.println("Listando pets cadastrados...");
+                Busca.listarPets();
                 break;
             case 5:
                 System.out.println("Listando pets cadastrados por critério..");
+                //Busca.listarPetsPorCriterio();
                 break;
             case 6:
                 System.out.println("Encerrando o sistema...");

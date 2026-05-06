@@ -7,6 +7,10 @@ import java.util.Scanner;
 public class Leitor {
     public final Scanner SC = new Scanner(System.in);
 
+    public String lerResposta() {
+        return SC.nextLine();
+    }
+
     public int lerInputInicial() {
         String resposta = SC.nextLine();
         while (!Validador.isInputValido(resposta)) {
@@ -15,9 +19,5 @@ public class Leitor {
             resposta = SC.nextLine();
         }
         return Integer.parseInt(resposta);
-    }
-
-    public String lerResposta() {
-        return SC.nextLine();
     }
 }

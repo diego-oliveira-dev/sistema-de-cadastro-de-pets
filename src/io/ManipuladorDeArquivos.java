@@ -1,6 +1,7 @@
 package io;
 
 import entities.Pet;
+import util.Validador;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -24,7 +25,7 @@ public class ManipuladorDeArquivos {
     }
 
     public static File criarArquivo(Pet pet) {
-        File directory = new File("src/petsCadastrados");
+        File directory = new File("dados/petsCadastrados");
         if (!directory.exists()) {
             directory.mkdirs();
         }
@@ -47,5 +48,34 @@ public class ManipuladorDeArquivos {
             return false;
         }
         return true;
+    }
+
+    public File[] coletarDadosCadastrados() {
+        File diretorio = new File("dados/petsCadastrados");
+        File[] arquivos = diretorio.listFiles();
+        if (!Validador.isAlgumPetCadastrado(arquivos)) {
+            throw new IllegalStateException("Nenhum pet cadastrado.");
+        }
+        return arquivos;
+    }
+
+    public String coletarItemDaLista(File arquivo, StringBuilder sb) {
+        try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
+            String line = br.readLine();
+            int j = 0;
+            while (line != null) {
+                String data = line.split(" - ")[1];
+                if (j == 0) {
+                    sb.append(data);
+                } else {
+                    sb.append(" - " + data);
+                }
+                line = br.readLine();
+                j++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return sb.toString();
     }
 }

@@ -36,7 +36,7 @@ public class Cadastro {
     }
 
     public static void salvarInfoEmArquivo(Pet pet) {
-        List<String> dados = List.of(
+        List<String> dadosDoPet = List.of(
                 pet.getNomeCompleto(),
                 pet.getTipo().toString(),
                 pet.getSexo().toString(),
@@ -46,6 +46,11 @@ public class Cadastro {
                 pet.getRaca()
         );
         File file = ManipuladorDeArquivos.criarArquivo(pet);
-        ManipuladorDeArquivos.salvarDadosNoArquivo(file, dados);
+        boolean arquivoSalvo = ManipuladorDeArquivos.salvarDadosNoArquivo(file, dadosDoPet);
+        if (arquivoSalvo) {
+            System.out.println("Pet cadastrado com sucesso!");
+        } else {
+            System.out.println("Ocorreu um erro ao cadastrar.");
+        }
     }
 }
