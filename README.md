@@ -34,5 +34,5 @@ Durante o desenvolvimento, foram trabalhados conceitos como:
 
 Esse projeto ainda está em desenvolvimento. Planejo revisitá-lo futuramente para:
 * Refatoração de certos componentes para melhorar legibilidade, escalabilidade e aplicação de boas práticas
-* Reforçar a validação do input dos usuários, que em algum caso está ausente ou frágil
-* Implementar funcionalidade de listar pets cadastrados com base em dois critérios
+* Reforçar a validação do input dos usuários, que em alguns casos está ausente ou frágil
+* Implementar funcionalidade de listar pets cadastrados com base em dois critérios (caso o usuário deseje)
